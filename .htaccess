@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.main-stage.com.ua [NC]
+RewriteRule ^(.*)$ http://main-stage.com.ua/$1 [L,R=301,NC]
+RewriteBase /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^.]+)\.html\ HTTP
+RewriteRule ^([^.]+)\.html$ http://main-stage.com.ua/$1 [R=301,L]
+RewriteCond %{REQUEST_URI} !(\.[^./]+)$
+RewriteCond %{REQUEST_fileNAME} !-d
+RewriteCond %{REQUEST_fileNAME} !-f
+RewriteRule (.*) /$1.html [L]
