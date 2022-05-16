@@ -143,3 +143,5 @@ if(isMobile.any()){
 	body.classList.add('mouse');
 }
 // Mobil Arrow End
+
+console.log('test!!!')
